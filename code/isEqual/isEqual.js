@@ -18,15 +18,15 @@ function isEqual(...arg) {
       return false;
     }
 
-    const KeysOp1 = Object.keys(op1);
-    const KeysOp2 = Object.keys(op2);
+    const op1Keys = Object.keys(op1);
+    const op2Keys = Object.keys(op2);
 
     // 비교 대상의 길이가 다른 경우
-    if (KeysOp1.length !== KeysOp2.length) {
+    if (op1Keys.length !== op2Keys.length) {
       return false;
     }
 
-    for (const key of KeysOp1) {
+    for (const key of op1Keys) {
       if (!isEqual(op1[key], op2[key])) return false;
     }
 
