@@ -1,4 +1,4 @@
-import { InputEvent, submitEvent, toggleForm } from './event.js';
+import { formInput, formSubmit, formToggle } from './event.js';
 
 const [$signinForm, $signupForm] = document.querySelectorAll('.form');
 
