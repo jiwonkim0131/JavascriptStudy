@@ -3,7 +3,7 @@ import { inputStatus, isSubmit, isSamePassword } from './auth.js';
 const [$signinLink, $signupLink] = document.querySelectorAll('.link>a');
 let allInputOfForm;
 
-const InputEvent = e => {
+const formInput = e => {
   allInputOfForm = e.target.parentNode.parentNode.querySelectorAll('input');
   const [$iconSuccess, $iconError] = e.target.parentNode.querySelectorAll('.icon');
   const $errorMessage = e.target.parentNode.querySelector('.error');
@@ -21,7 +21,7 @@ const InputEvent = e => {
   e.target.closest('.form').querySelector('.button').disabled = !isSubmit(allInputOfForm);
 };
 
-const submitEvent = e => {
+const formSubmit = e => {
   e.preventDefault();
   toaster.add(createToastAction('success', 'Well done!', 'This is a success alert'));
 
@@ -32,7 +32,7 @@ const submitEvent = e => {
   console.log(userInfo);
 };
 
-const toggleForm = e => {
+const formToggle = e => {
   if (!e.target.parentNode.classList.contains('link')) return;
   $signinLink.closest('form').classList.toggle('hidden');
   $signupLink.closest('form').classList.toggle('hidden');
